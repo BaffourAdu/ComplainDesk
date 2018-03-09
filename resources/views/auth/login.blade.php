@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
+@section('external-css')
+<link href="{{ asset('css/login-style.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Login</div>
+            <div class="text-center">
+                    <img src="{{ asset('img/logo.png') }}" class="img-responsive"> 
+            </div>
+           <!-- <div class="card-header">Welcome Back!</div>  -->
+            
+            <div class="login-form">
+                <br>
 
-                <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -32,7 +40,7 @@
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
+                                    <span class= height="100px""invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -61,8 +69,8 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
-            </div>
         </div>
     </div>
 </div>
