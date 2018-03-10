@@ -22,9 +22,9 @@
         @if (Auth::user()->is_admin)
             <a class="nav-link active" href="{{ url('/home') }}">Dashboard</a>
             <a class="nav-link" href="{{ url('/admin/tickets') }}">All Tickets</a>
-            <a class="nav-link" href="{{ url('/tickets') }}">Category</a>
-            <a class="nav-link" href="{{ url('/tickets') }}">Users</a>
-            <a class="nav-link" href="{{ url('/tickets') }}">Logs</a>
+            <a class="nav-link" href="{{ url('/admin/category') }}">Category</a>
+            <a class="nav-link" href="{{ url('/admin/users') }}">Users</a>
+            <a class="nav-link" href="{{ url('/admin/logs') }}">Logs</a>
         @else     
             <a class="nav-link active" href="{{ url('/home') }}">Dashboard</a>
             <a class="nav-link" href="{{ url('/mytickets') }}">My Tickets</a>

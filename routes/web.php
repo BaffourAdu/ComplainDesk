@@ -30,9 +30,9 @@ Route::post('/tickets', 'TicketsController@store');
 Route::get('/mytickets', 'TicketsController@userTickets');
 //Route to display more information on a single ticket
 Route::get('/tickets/{ticket_id}', 'TicketsController@show');
-
 //ROute to Handle new comments storage
 Route::post('/comment', 'CommentsController@postComment');
+//Route to Handle User Settings Update
 Route::get('/settings', 'UserSettingsController@index');
 
 
@@ -42,4 +42,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('tickets', 'TicketsController@index');
     //Routes to close a ticket
     Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
+    //Route to display Page to Create TIcket
+    Route::get('/category', 'CategoriesController@create');
+    //Route to Handle ticket Storage
+    Route::post('/category', 'CategoriesController@store');
+    //Route to Delete Category
+    Route::post('category/delete/{id}', 'CategoriesController@delete');
+    //
+    Route::get('/users', 'AdminController@adminUserCreate');
+    //
+    Route::post('/users', 'AdminController@adminUserStore');
 });

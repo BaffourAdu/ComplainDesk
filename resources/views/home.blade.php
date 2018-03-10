@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4 ">
+                <div class="col-sm-4">
                     <div class="card" style="width: 16rem; ">
                         <div class="card-body ">
                             <div>

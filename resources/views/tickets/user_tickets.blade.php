@@ -14,10 +14,9 @@
             @if ($tickets->isEmpty())
                 <p>You have not created any tickets.</p>
             @else
-                <table class="table">
+                <table class="table table-responsive">
                     <thead style="background:#2737A6;color:white">
                         <tr>
-
                             <th>Ticket ID</th>
                             <th> Title</th>
                             <th> Category</th>

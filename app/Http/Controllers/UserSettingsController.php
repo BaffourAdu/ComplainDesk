@@ -25,6 +25,10 @@ class UserSettingsController extends Controller
 
     public function changePassword()
     {
+        //$tickets = Ticket::paginate(10);
+        //$categories = Category::all();
+        $oldTelephone = Auth::user()->telephone;
 
+        return view('settings', compact('oldTelephone'));
     }
 }
