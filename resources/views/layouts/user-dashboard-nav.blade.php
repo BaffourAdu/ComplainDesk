@@ -21,7 +21,6 @@
             <a class="nav-link active" href="{{ url('/home') }}">Dashboard</a>
             <a class="nav-link" href="{{ url('/mytickets') }}">My Tickets</a>
             <a class="nav-link" href="{{ url('/tickets') }}">Open Ticket</a>
-            <a class="nav-link" href="#">Settings</a>
-            
+            <a class="nav-link" href="{{ url('/settings') }}">Settings</a>
         </nav>
     </div>
