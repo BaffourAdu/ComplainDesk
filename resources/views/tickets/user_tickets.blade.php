@@ -51,6 +51,7 @@
                                         <span class="label label-danger">{{ $ticket->status }}</span>
                                     @endif
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 @endforeach
                                 </td>
                                 <td>
@@ -69,12 +70,17 @@
                             </tr>
                         @endforeach
 =======
+=======
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
                                     </td>
                                     <td>{{ $ticket->updated_at }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+<<<<<<< HEAD
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
+=======
 >>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
 
                         {{ $tickets->render() }}

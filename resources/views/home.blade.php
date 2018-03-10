@@ -78,6 +78,7 @@
             <br><br>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <th>Ticket ID</th>
                             <th> Title</th>
                             <th> Category</th>
@@ -120,6 +121,8 @@
                             </tr>
                         @endforeach
 =======
+=======
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
             <table class="table">
                 <thead style="background:#2737A6;color:white">
                     <tr>
@@ -144,6 +147,9 @@
                         <td>Otto</td>
                         <td>@mdo</td>
                     </tr>
+<<<<<<< HEAD
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
+=======
 >>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
 
                 </tbody>

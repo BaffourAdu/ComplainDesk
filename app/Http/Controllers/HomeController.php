@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(Auth::user()->is_admin) {
             $tickets = Ticket::orderBy('id', 'desc')->paginate(10);
             $categories = Category::all();
@@ -52,6 +53,9 @@ class HomeController extends Controller
         }
 
         return view('home', compact('tickets', 'categories', 'totalTicketsClosed' , 'totalTicketsOpen', 'totalTickets'));
+=======
+        return view('home');
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
 =======
         return view('home');
 >>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
