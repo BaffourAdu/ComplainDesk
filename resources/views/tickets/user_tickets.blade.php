@@ -2,6 +2,12 @@
 
 @section('title', 'My Tickets')
 
+@section('external-css')
+<link href="{{ asset('css/userdashboard.css') }}" rel="stylesheet">
+@endsection
+
+@include('layouts.user-dashboard-nav')
+
 @section('content')
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
