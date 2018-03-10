@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Ticket;
-use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -25,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         if(Auth::user()->is_admin) {
             $tickets = Ticket::orderBy('id', 'desc')->paginate(10);
             $categories = Category::all();
@@ -53,5 +52,8 @@ class HomeController extends Controller
         }
 
         return view('home', compact('tickets', 'categories', 'totalTicketsClosed' , 'totalTicketsOpen', 'totalTickets'));
+=======
+        return view('home');
+>>>>>>> parent of 7da05be... Completed User Dashboard View and Tickets View
     }
 }
