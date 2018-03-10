@@ -28,7 +28,7 @@
                                    <i class="fa fa-list-ul" style="font-size:40px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
-                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalTickets }}</strong></h1></div>
                                     <div>Tickets</div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                     <i class="fa fa-envelope-open-o" style="font-size:40px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right">
-                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalTicketsOpen }}</strong></h1></div>
                                     <div>Open Tickets</div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                    <i class="fa fa-close" style="font-size:40px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
-                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalTicketsClosed }}</strong></h1></div>
                                     <div>Closed Tickets</div>
                                 </div>
                             </div>
@@ -76,49 +76,62 @@
             </div>
 
             <br><br>
+            @if ($tickets->isEmpty())
+                <p>You have not created any tickets.</p>
+            @else
+                <table class="table">
+                    <thead style="background:#2737A6;color:white">
+                        <tr>
 
-            <table class="table">
-                <thead style="background:#2737A6;color:white">
-                    <tr>
-                        <th>Ticket ID</th>
-                        <th> Title</th>
-                        <th> Category</th>
-                        <th> Status</th>
-                        <th> Last Updated</th>
-                        <th> Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
+                            <th>Ticket ID</th>F8F9FA
+                            <th> Title</th>
+                            <th> Category</th>
+                            <th> Status</th>
+                            <th> Last Updated</th>
+                            <th> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($tickets as $ticket)
+                            <tr>
+                                <td >
+                                    <a href="{{ url('tickets/'. $ticket->ticket_id) }}">
+                                        {{ $ticket->ticket_id }}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{ $ticket->title }}
+                                </td>
+                                <td>
+                                @foreach ($categories as $category)
+                                    @if ($category->id === $ticket->category_id)
+                                        {{ $category->name }}
+                                    @endif
+                                @endforeach
+                                </td>
+                                <td>
+                                @if ($ticket->status === 'Open')
+                                    <span class="label label-success text-success">{{ $ticket->status }}</span>
+                                @else
+                                    <span class="label label-danger text-danger">{{ $ticket->status }}</span>
+                                @endif
+                                </td>
+                                <td>{{ $ticket->updated_at }}</td>
+                                <td>  
+                                    <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
+                                         <button type="submit" class="btn btn-primary btn-sm">Comment</button>  
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
 
-                </tbody>
-            </table>
-            <nav aria-label="... ">
-                <ul class="pagination ">
-                    <li class="page-item disabled ">
-                        <a class="page-link " href="# " tabindex="-1 ">Previous</a>
-                    </li>
-                    <li class="page-item "><a class="page-link " href="# ">1</a></li>
-                    <li class="page-item active ">
-                        <a class="page-link " href="# ">2 <span class="sr-only ">(current)</span></a>
-                    </li>
-                    <li class="page-item "><a class="page-link " href="# ">3</a></li>
-                    <li class="page-item ">
-                        <a class="page-link " href="# ">Next</a>
-                    </li>
-                </ul>
-            </nav>
+                    </tbody>
+                </table>
+
+                {{ $tickets->render() }}
+
+            @endif
+  
         </div>
     </main>
 
