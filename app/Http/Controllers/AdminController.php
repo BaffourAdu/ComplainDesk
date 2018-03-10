@@ -56,6 +56,6 @@ class AdminController extends Controller
     
         $admin->delete();
 
-        return redirect()->back()->with("status", "Category Deleted.");
+        return redirect()->back()->with("status", "Admin Deleted.");
     }
 }
