@@ -75,8 +75,6 @@
                             <div class="col-md-6">
                                 <select id="category" type="category" class="form-control" name="category">
                                     <option value="">Select Category</option>
-                                    <option value="">Accounts</option>
-                                    <option value="">Administration</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -106,16 +104,6 @@
                                         <strong>{{ $errors->first('priority') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
-
-                         <div class="form-group">
-                            <label for="priority" class="col-md-4 control-label">Upload Image</label>
-
-                            <div class="col-md-6">
-                               <input type="file"></input>
-
-                               
                             </div>
                         </div>
 

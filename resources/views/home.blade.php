@@ -11,8 +11,6 @@
 @section('content')
 <body class="bg-light">
 
-
-
     <main role="main" class="container">
         <div id="page-wrapper" class="col-sm-12">
             <div class="row">
@@ -21,18 +19,17 @@
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card" style="width: 16rem;">
                         <div class="card-body ">
                             <div>
                                 <div style="float:left">
-                                   <i class="fa fa-list-ul" style="font-size:40px; color:blue"></i>
+                                   <i class="fa fa-list-ul" style="font-size:40px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
-                                    <div class="huge ">124</div>
-                                    <div>All tickets</div>
+                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div>Tickets</div>
                                 </div>
                             </div>
                             <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
@@ -41,17 +38,16 @@
                     </div>
                 </div>
 
-
                 <div class="col-sm-4 ">
-                    <div class="card " style="width: 16rem; ">
+                    <div class="card" style="width: 16rem; ">
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                    <i class="fa fa-envelope-open-o" style="font-size:40px; color:blue"></i>
+                                    <i class="fa fa-envelope-open-o" style="font-size:40px; color:#2737A6"></i>
                                 </div>
-                                <div class=" " style="float:right ">
-                                    <div class="huge ">124</div>
-                                    <div>All tickets</div>
+                                <div class=" " style="float:right">
+                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div>Open Tickets</div>
                                 </div>
                             </div>
                             <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm ">View details</a>
@@ -65,11 +61,11 @@
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                   <i class="fa fa-close" style="font-size:40px; color:blue"></i>
+                                   <i class="fa fa-close" style="font-size:40px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
-                                    <div class="huge ">124</div>
-                                    <div>All tickets</div>
+                                    <div class="huge"><h1><strong>124</strong></h1></div>
+                                    <div>Closed Tickets</div>
                                 </div>
                             </div>
                             <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
@@ -77,19 +73,19 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
-            <hr>
-            <table class="table ">
-                <thead>
+
+            <br><br>
+
+            <table class="table">
+                <thead style="background:#2737A6;color:white">
                     <tr>
-                        <th scope="col ">#</th>
-                        <th scope="col ">First</th>
-                        <th scope="col ">Last</th>
-                        <th scope="col ">Handle</th>
+                        <th>Ticket ID</th>
+                        <th> Title</th>
+                        <th> Category</th>
+                        <th> Status</th>
+                        <th> Last Updated</th>
+                        <th> Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -105,48 +101,7 @@
                         <td>Otto</td>
                         <td>@mdo</td>
                     </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row ">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+
                 </tbody>
             </table>
             <nav aria-label="... ">
