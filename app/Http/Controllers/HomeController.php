@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Ticket;
+use App\User;
+use App\Comment;
 
 class HomeController extends Controller
 {
@@ -36,9 +38,14 @@ class HomeController extends Controller
 
             $totalTicketsOpen = Ticket::all()->where('status', 'Open');
             $totalTicketsOpen = count($totalTicketsOpen);
+            
+            $totalAdmins = User::all()->where('is_admin', 1);
+            $totalAdmins = count($totalAdmins);
 
             $totalTickets = Ticket::all();
             $totalTickets = count($totalTickets);
+
+            $totalComments = null;
 
         }else{
             $tickets = Ticket::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(10);
@@ -52,9 +59,14 @@ class HomeController extends Controller
 
             $totalTickets = Ticket::where('user_id', Auth::user()->id)->paginate(10);
             $totalTickets = count($totalTickets);
+
+            $totalComments = Comment::where('user_id', Auth::user()->id)->paginate(10);
+            $totalComments = count($totalComments);
+
+            $totalAdmins = null;
         }
 
-        return view('home', compact('tickets', 'categories', 'totalTicketsClosed' , 'totalTicketsOpen', 'totalTickets'));
+        return view('home', compact('tickets', 'categories', 'totalTicketsClosed' , 'totalTicketsOpen', 'totalTickets', 'totalAdmins', 'totalComments'));
 
     }
 }

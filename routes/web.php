@@ -52,4 +52,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/users', 'AdminController@adminUserCreate');
     //
     Route::post('/users', 'AdminController@adminUserStore');
+    //
+    Route::post('/users/{id}', 'AdminController@delete');
+
 });

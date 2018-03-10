@@ -20,7 +20,7 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card" style="width: 16rem;">
                         <div class="card-body ">
                             <div>
@@ -29,16 +29,16 @@
                                 </div>
                                 <div class=" " style="float:right ">
                                     <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalTickets }}</strong></h1></div>
-                                    <div>Tickets</div>
+                                    <div>Total Tickets</div>
                                 </div>
                             </div>
-                            <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
+                            <div style="clear:both "> <a href="{{ url('/mytickets') }}" class="btn btn-outline-primary btn-sm">View details</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card" style="width: 16rem; ">
                         <div class="card-body ">
                             <div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4 ">
+                <div class="col-sm-3">
                     <div class="card " style="width: 16rem; ">
                         <div class="card-body ">
                             <div>
@@ -73,6 +73,44 @@
                         </div>
                     </div>
                 </div>
+
+                @if (Auth::user()->is_admin)
+                    <div class="col-sm-3 ">
+                        <div class="card " style="width: 16rem; ">
+                            <div class="card-body ">
+                                <div>
+                                    <div style="float:left ">
+                                    <i class="fa fa-close" style="font-size:40px; color:#2737A6"></i>
+                                    </div>
+                                    <div class=" " style="float:right ">
+                                        <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalAdmins }}</strong></h1></div>
+                                        <div>Total Admins</div>
+                                    </div>
+                                </div>
+                                <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="col-sm-3">
+                            <div class="card " style="width: 16rem; ">
+                                <div class="card-body ">
+                                    <div>
+                                        <div style="float:left ">
+                                        <i class="fa fa-close" style="font-size:40px; color:#2737A6"></i>
+                                        </div>
+                                        <div class=" " style="float:right ">
+                                            <div class="huge"><h1 style="color:#2737A6"><strong>{{ $totalComments}}</strong></h1></div>
+                                            <div>Total Comments</div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                @endif
             </div>
 
             <br><br>

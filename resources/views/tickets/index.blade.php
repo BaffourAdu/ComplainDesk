@@ -61,7 +61,7 @@
                                     </td>
                                     <td>
                                         <form action="{{ url('admin/close_ticket/' . $ticket->ticket_id) }}" method="POST">
-                                            {!! csrf_field() !!}
+                                            @csrf
                                             <button type="submit" class="btn btn-danger">Close</button>
                                         </form>
                                     </td>

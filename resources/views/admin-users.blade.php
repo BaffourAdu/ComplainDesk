@@ -122,7 +122,11 @@
                                         <td>{{ $admin->email }}</td>
                                         <td>{{ $admin->telephone }}</td>
                                         <td>{{ $admin->created_at}}</td>
-                                        <td><button type="button" class="btn btn-danger">Delete</button></td>
+                                        <td>
+                                            <form action="{{ url('admin/users/' . $admin->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

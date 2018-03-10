@@ -15,6 +15,12 @@ class UserSettingsController extends Controller
         //$categories = Category::all();
         $oldTelephone = Auth::user()->telephone;
 
+        $user = User::find(Auth::user()->id);
+
+        $user->email = 'john@foo.com';
+
+        $user->save();
+
         return view('settings', compact('oldTelephone'));
     }
 

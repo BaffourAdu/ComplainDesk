@@ -48,4 +48,14 @@ class AdminController extends Controller
 
         return view('admin-users', compact('admins'));
     }
+
+    //Method to detele Category
+    public function delete($id)
+    {
+        $admin = User::where('id', $id)->firstOrFail();
+    
+        $admin->delete();
+
+        return redirect()->back()->with("status", "Category Deleted.");
+    }
 }
