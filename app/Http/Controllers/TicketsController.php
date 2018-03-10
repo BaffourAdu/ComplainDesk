@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Ticket;
 use App\Mailers\AppMailer;
+use App\Http\Controllers\SMSController;
 use Illuminate\Support\Facades\Auth;
 
 class TicketsController extends Controller
@@ -31,7 +32,7 @@ class TicketsController extends Controller
         return view('tickets.create', compact('categories'));
     }
 
-    public function store(Request $request, AppMailer $mailer)
+    public function store(Request $request, AppMailer $mailer,SMSController $sms)
     {
         $this->validate($request, [
             'title'     => 'required|max:30',
@@ -53,9 +54,27 @@ class TicketsController extends Controller
 
         $ticket->save();
 
-        $mailer->sendTicketInformation(Auth::user(), $ticket);
+        $smsMessage = "You just created a Ticket with an ID: $ticket->ticket_id";
+        $userTelephone = Auth::user()->telephone;
+        
+        if (substr($userTelephone, 0, 1) == '0') {
+            $userTelephone= substr($userTelephone, 1);
+            $telephone = '+233' . $userTelephone;
+        }
+        
+        $smsResponse = $sms->sendSMS($smsMessage, $telephone);
 
-        return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+
+        if($smsResponse == "200"){
+            $mailer->sendTicketInformation(Auth::user(), $ticket);
+            
+            return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+        }else{
+            $mailer->sendTicketInformation(Auth::user(), $ticket);
+
+            return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened. SMS Not Sent!");
+        }
+
     }
 
 

@@ -33,6 +33,8 @@ Route::get('/tickets/{ticket_id}', 'TicketsController@show');
 
 //ROute to Handle new comments storage
 Route::post('/comment', 'CommentsController@postComment');
+Route::get('/sms', 'SMSController@sendSMS');
+
 
 //Admin routes( they should all be prefix with /admin in the Url)
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
