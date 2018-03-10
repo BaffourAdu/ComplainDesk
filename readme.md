@@ -26,13 +26,15 @@ ComplainDesk in no way makes this assertion that there are not other means to ma
 
 TEAM / CONTRIBUTORS
 -------------------------
-Baffour Adu Boampong 
-Roberta Akoto
-Robert Yin
-Saliha Homatsli
+Baffour Adu Boampong, 
+Roberta Akoto,
+Robert Yin,
+Saliha Homatsli,
 Tano Onuvughe
 
-APP DEMO => appgharage.com
+
+
+APP DEMO => appgharage.com/login
 
 ADMIN USER CREDENTIALS
 ------------------------
