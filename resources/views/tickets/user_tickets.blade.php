@@ -51,7 +51,7 @@
                                     <span class="label label-danger text-danger">{{ $ticket->status }}</span>
                                 @endif
                                 </td>
-                                <td>{{ $ticket->updated_at }}</td>
+                                <td>{{ $ticket->updated_at->diffForHumans() }}</td>
                                 <td>  
                                     <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
                                          <button type="submit" class="btn btn-primary btn-sm">Comment</button>  

@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\SMSController' => $baseDir . '/app/Http/Controllers/SMSController.php',
     'App\\Http\\Controllers\\TicketsController' => $baseDir . '/app/Http/Controllers/TicketsController.php',
+    'App\\Http\\Controllers\\UserSettingsController' => $baseDir . '/app/Http/Controllers/UserSettingsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\AdminMiddleware' => $baseDir . '/app/Http/Middleware/AdminMiddleware.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

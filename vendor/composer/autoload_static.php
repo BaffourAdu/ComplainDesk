@@ -358,6 +358,7 @@ class ComposerStaticInit79931ae2a8d75e9e22a08499bb4197d4
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\SMSController' => __DIR__ . '/../..' . '/app/Http/Controllers/SMSController.php',
         'App\\Http\\Controllers\\TicketsController' => __DIR__ . '/../..' . '/app/Http/Controllers/TicketsController.php',
+        'App\\Http\\Controllers\\UserSettingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserSettingsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminMiddleware.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

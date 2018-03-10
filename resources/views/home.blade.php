@@ -32,7 +32,7 @@
                                     <div>Tickets</div>
                                 </div>
                             </div>
-                            <div style="clear:both "> <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
+                            <div style="clear:both "> <a href="{{ url('/mytickets') }}" class="btn btn-outline-primary btn-sm">View details</a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <thead style="background:#2737A6;color:white">
                         <tr>
 
-                            <th>Ticket ID</th>F8F9FA
+                            <th>Ticket ID</th>
                             <th> Title</th>
                             <th> Category</th>
                             <th> Status</th>
@@ -116,7 +116,7 @@
                                     <span class="label label-danger text-danger">{{ $ticket->status }}</span>
                                 @endif
                                 </td>
-                                <td>{{ $ticket->updated_at }}</td>
+                                <td>{{ $ticket->updated_at->diffForHumans() }}</td>
                                 <td>  
                                     <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
                                          <button type="submit" class="btn btn-primary btn-sm">Comment</button>  

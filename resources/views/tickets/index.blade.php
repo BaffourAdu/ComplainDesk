@@ -2,20 +2,29 @@
 
 @section('title', 'All Tickets')
 
+@section('external-css')
+<link href="{{ asset('css/userdashboard.css') }}" rel="stylesheet">
+<link href="{{ asset('css/create.css') }}" rel="stylesheet">
+
+@endsection
+
+ @include('layouts.user-dashboard-nav')
+
+@section('navigation')
+   
+@endsection
+
 @section('content')
-    <div class="row">
+    <div class="container">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-ticket"> Tickets</i>
-                </div>
 
                 <div class="panel-body">
                     @if ($tickets->isEmpty())
                         <p>There are currently no tickets.</p>
                     @else
                         <table class="table">
-                            <thead>
+                            <thead style="background:#2737A6;color:white">
                                 <tr>
                                     <th>Category</th>
                                     <th>Title</th>
@@ -41,12 +50,12 @@
                                     </td>
                                     <td>
                                     @if ($ticket->status === 'Open')
-                                        <span class="label label-success">{{ $ticket->status }}</span>
+                                        <span class="label label-success text-success">{{ $ticket->status }}</span>
                                     @else
-                                        <span class="label label-danger">{{ $ticket->status }}</span>
+                                        <span class="label label-danger text-danger">{{ $ticket->status }}</span>
                                     @endif
                                     </td>
-                                    <td>{{ $ticket->updated_at }}</td>
+                                    <td>{{ $ticket->updated_at->diffForHumans() }}</td>
                                     <td>
                                         <a href="{{ url('tickets/' . $ticket->ticket_id) }}" class="btn btn-primary">Comment</a>
                                     </td>
