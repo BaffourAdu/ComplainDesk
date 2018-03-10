@@ -34,6 +34,8 @@ Route::get('/tickets/{ticket_id}', 'TicketsController@show');
 Route::post('/comment', 'CommentsController@postComment');
 //Route to Handle User Settings Update
 Route::get('/settings', 'UserSettingsController@index');
+//Route to Handle User Settings Update
+Route::post('/settings', 'UserSettingsController@updateTelephone');
 
 
 //Admin routes( they should all be prefix with /admin in the Url)

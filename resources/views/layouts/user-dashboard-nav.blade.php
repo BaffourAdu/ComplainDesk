@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark text-white" style="background-color:#0054a6">
-        <a class="navbar-brand" href="#"><img class="img-responsive2" src="{{ asset('img/cmp.png') }}" style="width:70px;"></a>
+        <a class="navbar-brand" href="{{ url('/home') }}"><img class="img-responsive2" src="{{ asset('img/cmp.png') }}" style="width:70px;"></a>
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>

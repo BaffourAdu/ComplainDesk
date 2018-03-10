@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 
 class UserSettingsController extends Controller
@@ -15,26 +16,22 @@ class UserSettingsController extends Controller
         //$categories = Category::all();
         $oldTelephone = Auth::user()->telephone;
 
+        return view('settings', compact('oldTelephone'));
+    }
+
+    public function updateTelephone(Request $request)
+    {   
+        $this->validate($request, [
+            'telephone'     => 'required|max:10',
+        ]);
+
         $user = User::find(Auth::user()->id);
 
-        $user->email = 'john@foo.com';
+        $user->telephone = $request->input('telephone');
 
         $user->save();
 
-        return view('settings', compact('oldTelephone'));
+        return redirect()->back()->with("status", "Your Telephone Number has been submitted.");
     }
 
-    public function updateTelephone()
-    {
-
-    }
-
-    public function changePassword()
-    {
-        //$tickets = Ticket::paginate(10);
-        //$categories = Category::all();
-        $oldTelephone = Auth::user()->telephone;
-
-        return view('settings', compact('oldTelephone'));
-    }
 }

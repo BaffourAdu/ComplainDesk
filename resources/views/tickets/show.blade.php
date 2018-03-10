@@ -9,45 +9,43 @@
 @include('layouts.user-dashboard-nav')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    #{{ $ticket->ticket_id }} - {{ $ticket->title }}
-                </div>
-
-                <div class="panel-body">
-                    @include('includes.flash')
-
-                    <div class="ticket-info">
-                        <p>{{ $ticket->message }}</p>
-                        <p>Categry: {{ $category->name }}</p>
-                        <p>
-                        @if ($ticket->status === 'Open')
-                            Status: <span class="label label-success">{{ $ticket->status }}</span>
-                        @else
-                            Status: <span class="label label-danger">{{ $ticket->status }}</span>
-                        @endif
-                        </p>
-                        <p>Created on: {{ $ticket->created_at->diffForHumans() }}</p>
-                    </div>
-                    
-                    <hr>
-                    
-                    <div class="comments">
-                        @foreach ($comments as $comment)
-                            <div class="panel panel-@if($ticket->user->id === $comment->user_id) {{"default"}}@else{{"success"}}@endif">
-                                <div class="panel panel-heading">
-                                    {{ $comment->user->name }}
-                                    <span class="pull-right">{{ $comment->created_at->format('Y-m-d') }}</span>
-                                </div>
-
-                                <div class="panel panel-body">
-                                    {{ $comment->comment }}     
-                                </div>
+<div class="col-md-8" style="margin:auto">
+        <div class="card">
+            <div class="card-header" style="background:#2737A6;color:white">ID No.: {{ $ticket->ticket_id }}</div>
+            <div class="container">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" value="{{ $ticket->title }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group" readonly>
+                                <label for="category">Status</label>
+                                <input type="text" class="form-control" id="category" value="{{ $ticket->status }}" readonly>
                             </div>
-                        @endforeach
+                        </div>
+                        <div class="form-group" readonly>
+                            <label for="comment">Message</label>
+                            <textarea class="form-control" rows="2" id="message" readonly>{{ $ticket->message }}</textarea>
+                        </div>
                     </div>
+                </div>
+            </div>
+         </div>
+            <br><hr>
+            @foreach ($comments as $comment)
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container">
+                            <blockquote class="blockquote mb-0">
+                                <p>{{ $comment->comment }}  </p>
+                                <footer class="blockquote-footer">By {{ $comment->user->name }} on {{ $comment->created_at->format('Y-m-d') }}</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
 
                     <hr>
 
@@ -58,7 +56,7 @@
                             <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
 
                             <div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
-                                <textarea rows="10" id="comment" class="form-control" name="comment"></textarea>
+                                <textarea rows="5" id="comment" class="form-control" name="comment"></textarea>
 
                                 @if ($errors->has('comment'))
                                     <span class="help-block">

@@ -16,7 +16,7 @@
                 <div class="container">
 
                     <div class="card">
-                        <div class="card-header bg-primary text-white">New admin</div>
+                        <div class="card-header" style="background:#2737A6;color:white">New admin</div>
                         <div class="card-body">
                             <div class="container">
                             @include('includes.flash')
@@ -102,11 +102,11 @@
             <div class="container">
 
                 <div class="card">
-                    <div class="card-header bg-primary text-white">All Admins</div>
+                    <div class="card-header" style="background:#2737A6;color:white">All Admins</div>
                     <div class="card-body">
                         <div class="container">
                             <table class="table">
-                                <thead class="bg-primary text-white">
+                                <thead style="background:#2737A6;color:white">
                                     <tr>
                                         <th>Fullname</th>
                                         <th>Email</th>
