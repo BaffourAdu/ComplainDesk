@@ -1,4 +1,5 @@
 THE PROBLEM
+----------------------------
 
 Ever tried complaining to your institution about a nagging issue you are facing? The school light being out, a lecturer’s theatrics, the WIFI being down, problems with a course, issues accessing your student portal or is it just plain you are a fresher and you literally have no idea who to meet or what to do. To solve most of these things, requires the student to make a complain as well as tracking his complain to ensure it has been resolved. This is where the problem lies, apart from human error, the individual forgetting or the individual being flooded with the same issues which someone has complained about. 
 
@@ -7,6 +8,7 @@ It is also important to remember in a large institution like University of Ghana
 
 
 THE SOLUTION
+----------------------------
 
 Complain Desk aims to fix this nagging problem by offering a web application solution to universities. The goal is to easily place in the hands of students several features in order to make complaints to the right authorities easier and efficient. It also provides the opportunity to scan through earlier resolved issues or pending issues, this would prevent the institution from being notified of the same issue several times. While allowing to track the status of complaints made and alerting the complainants when it is resolved.
 
@@ -17,13 +19,13 @@ ComplainDesk provides a clean user interface using the Laravel framework which a
 
 
 CONCLUSION
-
+----------------------------
 ComplainDesk in no way makes this assertion that there are not other means to make a complain. Either by virtue of a suggestion box, walking to the office of the appropriate individual or maybe just sending an email to the appropriate authority. But being students ourselves we strongly view this as what is wrong with the complaint system. Especially for a large institution, this little simple task it could be extremely frustrating and unnecessarily long. This application is what we believe to be among the things missing in our various institutions in Ghana which would benefit both the student and the institution.
 
 
 
-TEAM
-
+TEAM / CONTRIBUTORS
+-------------------------
 Baffour Adu Boampong 
 Roberta Akoto
 Robert Yin
