@@ -73,5 +73,5 @@ Core Team
 Baffour Adu Boampong, 
 Roberta Akoto,
 Robert Yin,
-Saliha Homatsli,
+Saliha Hotamisli,
 Tano Onuvughe
