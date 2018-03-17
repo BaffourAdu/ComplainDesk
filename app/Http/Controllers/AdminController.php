@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ComplainDesk\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use ComplainDesk\User;
 
 
 

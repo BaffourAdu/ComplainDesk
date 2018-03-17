@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ComplainDesk\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Category;
+use ComplainDesk\Http\Controllers\Controller;
+use ComplainDesk\Category;
 
 class CategoriesController extends Controller
 {
-    //use App\Comment;
+    //use ComplainDesk\Comment;
 
     //Method to Show the Create New Category Vew
     public function create()

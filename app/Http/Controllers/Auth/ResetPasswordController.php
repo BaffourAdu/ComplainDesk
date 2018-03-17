@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace ComplainDesk\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use ComplainDesk\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

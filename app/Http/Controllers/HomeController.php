@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ComplainDesk\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Category;
-use App\Ticket;
-use App\User;
-use App\Comment;
+use ComplainDesk\Category;
+use ComplainDesk\Ticket;
+use ComplainDesk\User;
+use ComplainDesk\Comment;
 
 class HomeController extends Controller
 {

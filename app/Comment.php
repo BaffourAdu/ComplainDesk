@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ComplainDesk;
 
 use Illuminate\Database\Eloquent\Model;
 

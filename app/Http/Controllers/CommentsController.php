@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ComplainDesk\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Ticket;
-use App\Comment;
-use App\Mailers\AppMailer;
+use ComplainDesk\User;
+use ComplainDesk\Ticket;
+use ComplainDesk\Comment;
+use ComplainDesk\Mailers\AppMailer;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\SMSController;
+use ComplainDesk\Http\Controllers\SMSController;
 
 
 class CommentsController extends Controller

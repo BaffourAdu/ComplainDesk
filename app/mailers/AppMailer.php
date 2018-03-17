@@ -1,7 +1,7 @@
 <?php
-namespace App\Mailers;
+namespace ComplainDesk\Mailers;
 
-use App\Ticket;
+use ComplainDesk\Ticket;
 use Illuminate\Contracts\Mail\Mailer;
 
 class AppMailer 
