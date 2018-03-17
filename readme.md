@@ -49,7 +49,7 @@ How to Set-up Project Locally
 
 NB: Make sure you have composer installed or downlaod composer at => https://getcomposer.org/download/
 
-1. git clone <repo url>
+1. git clone <repo-url>
 2. composer install
 3. Open the console and cd your project root directory
 4. Rename .env.example file to .envinside your project root and update the database information. 
