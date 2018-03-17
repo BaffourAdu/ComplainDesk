@@ -47,7 +47,7 @@ Complain Desk follows the PSR-2 coding standard and the PSR-4 autoloading standa
 How to Set-up Project Locally
 --------------------------------
 
-NB: Make sure you have composer installed or downlaod composer at => https://getcomposer.org/download/
+NB: Make sure you have composer installed or you may downlaod composer at => https://getcomposer.org/download/
 
 1. git clone <repo-url>
 2. composer install
