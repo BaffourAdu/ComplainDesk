@@ -1,8 +1,16 @@
+About Complain Desk
+--------------------------------------------
+Complain is a complain management system built and maintained Baffour Adu Boampong, 
+Roberta Akoto,
+Robert Yin,
+Saliha Hotamisli 
+to tackle the problem of customer, students or users complaint tracking and management
+in an efficient and simple way.
+
+
 Complain Desk Development
 ----------------------------------------------
-You may propose new features or improvements of existing ones by sending an email to baffouraduboampong@gmail.com. 
-If you propose a new feature, please be willing to implement at least some of the code that would be needed to complete the feature.
-
+You may propose new features or improvements of existing ones by submiting PR's or sending an email to baffouraduboampong@gmail.com. 
 
 
 Security Vulnerabilities
@@ -11,21 +19,32 @@ If you discover a security vulnerability, please send an email to Baffour Adu Bo
 All security vulnerabilities will be promptly addressed.
 
 
-
 Coding Style
 ----------------------------------------------
 Complain Desk follows the PSR-2 coding standard and the PSR-4 autoloading standard.
 
 
+Requirements, Recommended Environment
+----------------------------------------------
+Laravel 5.6.
+Linux based OS preferred.
+PHP 7.1+.
+Apache or Nginx.
 
-How to Set-up Project Locally
+
+License
+----------------------------------------------
+ComplainDesk is open-sourced software licensed under the MIT license.
+
+
+Installation
 --------------------------------
 
 NB: Make sure you have composer installed or you may downlaod composer at => https://getcomposer.org/download/
 
 1. git clone <repo-url>
 2. Run composer install
-3. Open the console and cd your project root directory
+3. Open the console and cd into your project root directory
 4. Rename .env.example file to .env inside your project root and update the database information. 
     (windows wont let you do it, so you have to open your console cd your project root directory and Run mv .env.example .env )
 5. Run composer install or php composer.phar install
@@ -42,10 +61,4 @@ If for some reason your project stop working run :
 
 
 
-Core Team
--------------------------
-Baffour Adu Boampong, 
-Roberta Akoto,
-Robert Yin,
-Saliha Hotamisli,
-Tano Onuvughe
+Built in Ghana
