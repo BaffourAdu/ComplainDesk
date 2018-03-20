@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BaffourAdu/ComplainDesk.svg?branch=master)](https://travis-ci.org/BaffourAdu/ComplainDesk)
+
 About Complain Desk
 --------------------------------------------
 Complain is a complain management system built and maintained Baffour Adu Boampong, 
