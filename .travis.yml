@@ -6,7 +6,7 @@ php:
 before_script:
   - cp .env.travis .env
   - composer self-update
-  - composer clear cache
+  - composer clear-cache
   - composer install --prefer-source --no-interaction
   - php artisan clear-compiled
   - php artisan optimize
