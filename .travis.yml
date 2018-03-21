@@ -5,12 +5,12 @@ php:
 
 before_script:
   - cp .env.travis .env
-  - composer install --prefer-source --no-interaction
   - composer dump-autoload -o 
   - php artisan clear-compiled
 
 script:
   - php artisan key:generate
+  - composer install --prefer-source --no-interaction
   - vendor/bin/phpunit
 
 cache:
