@@ -2,12 +2,11 @@ language: php
 
 php:
   - 7.1
+  - 7.2
 
 before_script:
   - cp .env.travis .env
-  - composer self-update
-  - composer clear-cache
-  - composer install --prefer-source --no-interaction
+  - composer install --no-interaction
   - php artisan clear-compiled
   - php artisan optimize
 
@@ -17,4 +16,4 @@ script:
 
 cache:
   directories:
-    -vendor
+    - vendor
