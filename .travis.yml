@@ -8,7 +8,6 @@ before_script:
   - composer install --prefer-source --no-interaction
   - composer dump-autoload -o 
   - php artisan clear-compiled
-  - php artisan optimize
 
 script:
   - php artisan key:generate
