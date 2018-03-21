@@ -2,11 +2,10 @@ language: php
 
 php:
   - 7.1
-  - 7.2
 
 before_script:
   - cp .env.travis .env
-  - composer install
+  - composer install --prefer-source --no-interaction
   - composer dump-autoload -o 
   - php artisan clear-compiled
   - php artisan optimize
