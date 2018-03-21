@@ -1,20 +1,18 @@
-os:
-  - linux
-
-language: 
-  - php
+language: php
 
 php:
-  - '7.1'
-  
-before_script:
-  - composer self-update
-  - composer install --no-interaction
-  - cp .env.travis .env
-  - pear install pear/PHP_CodeSniffer
-  - phpenv rehash
+- 7.0
+- 7.1
 
-  
+services:
+- mysql
+
+before_script:
+- cp .env.travis .env
+- composer self-update
+- composer install --no-interaction
+- php artisan key:generate
+
 script:
-  - vendor/bin/phpunit --coverage-text
-  - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
+    - vendor/bin/phpunit
+
