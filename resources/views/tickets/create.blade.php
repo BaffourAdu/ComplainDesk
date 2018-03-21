@@ -1,6 +1,5 @@
 @extends('layouts.app') @section('title', 'Open Ticket') @section('external-css')
 <link href="{{ asset('css/userdashboard.css') }}" rel="stylesheet">
-<link href="{{ asset('css/create.css') }}" rel="stylesheet">
 
 <!-- Including Dashboard Layour -->
 @endsection @include('layouts.user-dashboard-nav') @section('navigation') @endsection @section('content')
@@ -20,7 +19,7 @@
             <label for="title" class="col-md-2 control-label">Title</label>
 
             <div class="col-md-12">
-                <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" max="30"> @if ($errors->has('title'))
+                <input id="title" type="text" class="form-control" style="line-height: 40px;" name="title" value="{{ old('title') }}" maxlength="30"> @if ($errors->has('title'))
                 <span class="help-block">
                     <strong>{{ $errors->first('title') }}</strong>
                 </span>
@@ -32,7 +31,7 @@
             <label for="category" class="col-md-4 control-label">Category</label>
 
             <div class="col-md-12">
-                <select id="category" type="category" class="form-control" name="category">
+                <select id="category" type="category" class="form-control" name="category" style="height: 55px;">
                     <option value="">Select Category</option>
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -51,7 +50,7 @@
             <label for="priority" class="col-md-4 control-label">Priority</label>
 
             <div class="col-md-12">
-                <select id="priority" type="" class="form-control" name="priority">
+                <select id="priority" type="" class="form-control" name="priority" style="height: 55px;">
                     <option value="">Select Priority</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>

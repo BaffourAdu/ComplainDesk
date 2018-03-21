@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <div>
                                 <div style="float:left">
-                                    <i class="fa fa-list-ul" style="font-size:65px; color:#2737A6"></i>
+                                    <i class="fa fa-list-ul" style="font-size:50px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
                                     <div class="huge">
@@ -42,7 +42,7 @@
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                    <i class="fa fa-envelope-open-o" style="font-size:65px; color:#2737A6"></i>
+                                    <i class="fa fa-envelope-open-o" style="font-size:50px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right">
                                     <div class="huge">
@@ -67,7 +67,7 @@
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                    <i class="fa fa-close" style="font-size:65px; color:#2737A6"></i>
+                                    <i class="fa fa-close" style="font-size:50px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
                                     <div class="huge">
