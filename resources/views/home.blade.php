@@ -82,6 +82,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 @if (Auth::user()->is_admin)
                 <div class="col-sm-3 ">
                     <div class="card " style="width: 16rem; ">
@@ -129,6 +130,9 @@
                     </div>
                 </div>
                 @endif
+=======
+               
+>>>>>>> b932af1e23a13ca5f3933a87e8ca08d4494d140a
             </div>
 
             <br>
