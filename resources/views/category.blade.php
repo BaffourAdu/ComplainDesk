@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn" style="background:#2737A6;color:white">
                                         <i class="fa fa-btn fa-ticket"></i> Add Category
                                     </button>
                                 </div>
@@ -50,7 +50,7 @@
                                 <thead style="background:#2737A6;color:white">
                                     <tr>
                                         <th>Name</th>
-                                        <th>Created_at</th>
+                                        <th>Created on</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,7 +58,7 @@
                                     @foreach ($categories as $category)
                                     <tr>
                                         <td>{{ $category->name }}</td>
-                                        <td>{{ $category->created_at }}</td>
+                                        <td>{{ $category->created_at->format('F d, Y H:i') }}</td>
                                         <td>
                                             <form action="{{ url('admin/category/delete/' . $category->id) }}" method="POST">
                                                 @csrf

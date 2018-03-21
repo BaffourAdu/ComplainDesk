@@ -3,7 +3,7 @@
 
 <body class="bg-light">
 
-    <main role="main" class="container">
+    <main role="main" class="container col-lg-6">
 
         <div class="container">
 
@@ -75,8 +75,8 @@
                             <br>
 
                             <div>
-                                <button type="submit" class="btn btn-primary">
-                                    Register
+                                <button type="submit" class="btn" style="background:#2737A6;color:white">
+                                    Add Admin
                                 </button>
                             </div>
                         </form>
@@ -100,7 +100,7 @@
                                     <th>Fullname</th>
                                     <th>Email</th>
                                     <th>Telephone</th>
-                                    <th>Created_at</th>
+                                    <th>Registered On</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -110,7 +110,7 @@
                                     <td>{{ $admin->name }}</td>
                                     <td>{{ $admin->email }}</td>
                                     <td>{{ $admin->telephone }}</td>
-                                    <td>{{ $admin->created_at}}</td>
+                                    <td>{{ $admin->created_at->format('F d, Y H:i') }}</td>
                                     <td>
                                         <form action="{{ url('admin/users/' . $admin->id) }}" method="POST">
                                             @csrf

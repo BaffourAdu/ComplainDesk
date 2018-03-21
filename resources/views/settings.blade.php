@@ -16,7 +16,7 @@
                         <label for="new">New Phone Number:</label>
                         <input type="number" class="form-control" id="new" name="telephone">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn" style="background:#2737A6;color:white">Update Telephone</button>
                 </form>
             </div>
         </div>

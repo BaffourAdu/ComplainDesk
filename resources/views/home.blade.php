@@ -14,10 +14,10 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card" style="">
-                        <div class="card-body ">
+                        <div class="card-body">
                             <div>
                                 <div style="float:left">
-                                    <i class="fa fa-list-ul" style="font-size:40px; color:#2737A6"></i>
+                                    <i class="fa fa-list-ul" style="font-size:65px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
                                     <div class="huge">
@@ -28,9 +28,11 @@
                                     <div>Total Tickets</div>
                                 </div>
                             </div>
+                            <!--
                             <div style="clear:both ">
                                 <a href="#" class="btn btn-outline-primary btn-sm">View details</a>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -40,7 +42,7 @@
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                    <i class="fa fa-envelope-open-o" style="font-size:40px; color:#2737A6"></i>
+                                    <i class="fa fa-envelope-open-o" style="font-size:65px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right">
                                     <div class="huge">
@@ -48,12 +50,14 @@
                                             <strong>{{ $totalTicketsOpen }}</strong>
                                         </h1>
                                     </div>
-                                    <div>Open Tickets</div>
+                                    <div>Opened Tickets</div>
                                 </div>
                             </div>
-                            <div style="clear:both ">
+                            <!--
+                            <div style="clear:both;">
                                 <a href="# " class="btn btn-outline-primary btn-sm ">View details</a>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -63,7 +67,7 @@
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
-                                    <i class="fa fa-close" style="font-size:40px; color:#2737A6"></i>
+                                    <i class="fa fa-close" style="font-size:65px; color:#2737A6"></i>
                                 </div>
                                 <div class=" " style="float:right ">
                                     <div class="huge">
@@ -74,9 +78,11 @@
                                     <div>Closed Tickets</div>
                                 </div>
                             </div>
+                            <!--
                             <div style="clear:both ">
                                 <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -84,18 +90,18 @@
 
             <br>
             <br> @if ($tickets->isEmpty())
-            <p>You have not created any tickets.</p>
+            <p>No Tickets have been created.</p>
             @else
             <div class="card-body">
                 <table class="table table-responsive-md">
                     <thead style="background:#2737A6;color:white">
                         <tr>
-
                             <th>Ticket ID</th>
                             <th> Title</th>
                             <th> Category</th>
                             <th> Status</th>
-                            <th> Last Updated</th>
+                            <th> Date Opened</th>
+                            <th>Ticket Duration</th>
                             <th> Action</th>
                         </tr>
                     </thead>
@@ -120,10 +126,11 @@
                                 <span class="label label-danger text-danger">{{ $ticket->status }}</span>
                                 @endif
                             </td>
-                            <td>{{ $ticket->updated_at }}</td>
+                            <td>{{ $ticket->created_at->format('F d, Y H:i') }}</td>
+                            <td>{{ $ticket->created_at->diffInHours($ticket->updated_at) }} hour (s)</td>
                             <td>
                                 <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
-                                    <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+                                    <button type="submit" class="btn btn-sm" style="background:#2737A6;color:white">More Details</button>
                                 </form>
                             </td>
                         </tr>
