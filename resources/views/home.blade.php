@@ -5,7 +5,7 @@
 <body class="bg-light">
 
     <main role="main" class="container">
-        <div id="page-wrapper" class="col-sm-12">
+        <div id="page-wrapper" class="col-md-12">
             <div class="row">
                 <div class="col-sm-3">
                     <h1 class="page-header"></h1>
@@ -13,8 +13,8 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
+                <div class="col-sm-4">
+                    <div class="card" style="">
                         <div class="card-body ">
                             <div>
                                 <div style="float:left">
@@ -36,8 +36,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card" style="width: 16rem; ">
+                <div class="col-sm-4">
+                    <div class="card" style="">
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
@@ -59,8 +59,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card " style="width: 16rem; ">
+                <div class="col-sm-4">
+                    <div class="card " style="">
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
@@ -81,65 +81,13 @@
                         </div>
                     </div>
                 </div>
-
-<<<<<<< HEAD
-                @if (Auth::user()->is_admin)
-                <div class="col-sm-3 ">
-                    <div class="card " style="width: 16rem; ">
-                        <div class="card-body ">
-                            <div>
-                                <div style="float:left ">
-                                    <i class="fa fa-group" style="font-size:40px; color:#2737A6"></i>
-                                </div>
-                                <div class=" " style="float:right ">
-                                    <div class="huge">
-                                        <h1 style="color:#2737A6">
-                                            <strong>{{ $totalAdmins }}</strong>
-                                        </h1>
-                                    </div>
-                                    <div>Total Admins</div>
-                                </div>
-                            </div>
-                            <div style="clear:both ">
-                                <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @else
-                <div class="col-sm-3">
-                    <div class="card " style="width: 16rem; ">
-                        <div class="card-body ">
-                            <div>
-                                <div style="float:left ">
-                                    <i class="fa fa-comments-o" style="font-size:40px; color:#2737A6"></i>
-                                </div>
-                                <div class=" " style="float:right ">
-                                    <div class="huge">
-                                        <h1 style="color:#2737A6">
-                                            <strong>{{ $totalComments}}</strong>
-                                        </h1>
-                                    </div>
-                                    <div>Total Comments</div>
-                                </div>
-                            </div>
-                            <div style="clear:both ">
-                                <a href="# " class="btn btn-outline-primary btn-sm">View details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
-=======
-               
->>>>>>> b932af1e23a13ca5f3933a87e8ca08d4494d140a
             </div>
 
             <br>
             <br> @if ($tickets->isEmpty())
             <p>You have not created any tickets.</p>
             @else
-            <table class="table">
+            <table class="table table-responsive-md">
                 <thead style="background:#2737A6;color:white">
                     <tr>
 
