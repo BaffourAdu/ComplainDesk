@@ -5,27 +5,35 @@
 
     <main role="main" class="container">
         <div id="page-wrapper" class="col-md-12">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h1 class="page-header"></h1>
+            <div class="row justify-content-end">
+                <div class="col-sm-2">
+                    <h1 class="page-header">
+                        @if (!Auth::user()->is_admin)
+                        <a href="{{ url('/tickets') }}" class="btn btn-md" role="button" style="background:#443FFF;color:white;font-size:16px; font-weight:bold"
+                            aria-pressed="true">
+                            <span class="fa fa-ticket"></span> Open New Ticket
+                        </a>
+                        @endif
+                    </h1>
                 </div>
             </div>
+            <br>
 
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card" style="">
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Total Tickets</div>
                         <div class="card-body">
                             <div>
                                 <div style="float:left">
                                     <i class="fa fa-list-ul" style="font-size:50px; color:#2737A6"></i>
                                 </div>
-                                <div class=" " style="float:right ">
+                                <div class=" " style="float:right">
                                     <div class="huge">
                                         <h1 style="color:#2737A6">
                                             <strong>{{ $totalTickets }}</strong>
                                         </h1>
                                     </div>
-                                    <div>Total Tickets</div>
                                 </div>
                             </div>
                             <!--
@@ -39,6 +47,8 @@
 
                 <div class="col-sm-4">
                     <div class="card" style="">
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Opened Tickets</div>
+
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
@@ -50,7 +60,6 @@
                                             <strong>{{ $totalTicketsOpen }}</strong>
                                         </h1>
                                     </div>
-                                    <div>Opened Tickets</div>
                                 </div>
                             </div>
                             <!--
@@ -64,6 +73,7 @@
 
                 <div class="col-sm-4">
                     <div class="card " style="">
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Closed Tickets</div>
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
@@ -75,7 +85,6 @@
                                             <strong>{{ $totalTicketsClosed }}</strong>
                                         </h1>
                                     </div>
-                                    <div>Closed Tickets</div>
                                 </div>
                             </div>
                             <!--
@@ -93,8 +102,8 @@
             <p>No Tickets have been created.</p>
             @else
             <div class="card-body">
-                <table class="table table-responsive-md">
-                    <thead style="background:#2737A6;color:white">
+                <table class="table table-responsive-md table-hover">
+                    <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                         <tr>
                             <th>Ticket ID</th>
                             <th> Title</th>
@@ -130,7 +139,7 @@
                             <td>{{ $ticket->created_at->diffInHours($ticket->updated_at) }} hour (s)</td>
                             <td>
                                 <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
-                                    <button type="submit" class="btn btn-sm" style="background:#2737A6;color:white">More Details</button>
+                                    <button type="submit" class="btn btn-sm" style="background:#2737A6;color:white;font-weight:bold">More Details</button>
                                 </form>
                             </td>
                         </tr>

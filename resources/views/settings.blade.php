@@ -3,7 +3,7 @@
 <div class="container col-md-6">
     <div class="col-md-10">
         <div class="card">
-            <div class="card-header" style="background:#2737A6;color:white">Update Phone Number</div>
+            <div class="card-header" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Update Phone Number</div>
             <div class="card-body">
                 @include('includes.flash')
                 <form action="{{ url('/settings') }}" method="POST">
@@ -16,7 +16,7 @@
                         <label for="new">New Phone Number:</label>
                         <input type="number" class="form-control" id="new" name="telephone">
                     </div>
-                    <button type="submit" class="btn" style="background:#2737A6;color:white">Update Telephone</button>
+                    <button type="submit" class="btn" style="background:#2737A6;color:white;font-weight:bold">Update Telephone</button>
                 </form>
             </div>
         </div>

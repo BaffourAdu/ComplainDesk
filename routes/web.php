@@ -12,9 +12,16 @@
 */
 
 //Home Route
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+//Route::view('/emails', 'emails.sample_email');
+
+
+//Redirect Homepage to login
+Route::redirect('/', '/login', 301);
 
 //Route for authentication Handling
 Auth::routes();
@@ -39,7 +46,7 @@ Route::post('/settings', 'UserSettingsController@updateTelephone');
 
 
 //Admin routes( they should all be prefix with /admin in the Url)
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     //Route to display all tickets
     Route::get('tickets', 'TicketsController@index');
     //Routes to close a ticket
@@ -56,5 +63,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::post('/users', 'AdminController@adminUserStore');
     //
     Route::post('/users/{id}', 'AdminController@delete');
-
 });

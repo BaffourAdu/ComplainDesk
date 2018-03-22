@@ -8,7 +8,7 @@
         <div class="container">
 
             <div class="card">
-                <div class="card-header" style="background:#2737A6;color:white">Add New admin</div>
+                <div class="card-header" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Add New admin</div>
                 <div class="card-body">
                     <div class="container">
                         @include('includes.flash')
@@ -75,7 +75,7 @@
                             <br>
 
                             <div>
-                                <button type="submit" class="btn" style="background:#2737A6;color:white">
+                                <button type="submit" class="btn" style="background:#2737A6;color:white; font-weight:bold">
                                     Add Admin
                                 </button>
                             </div>
@@ -95,7 +95,7 @@
                 <div class="card-body">
                     <div class="container">
                         <table class="table table-responsive">
-                            <thead style="background:#2737A6;color:white">
+                            <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                                 <tr>
                                     <th>Fullname</th>
                                     <th>Email</th>

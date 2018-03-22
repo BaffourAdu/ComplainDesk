@@ -9,8 +9,8 @@
                 @if ($tickets->isEmpty())
                 <p>There are currently no tickets.</p>
                 @else
-                <table class="table table-responsive-md">
-                    <thead style="background:#2737A6;color:white">
+                <table class="table table-responsive">
+                    <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                         <tr>
                             <th>Ticket ID</th>
                             <th> Title</th>
@@ -18,7 +18,6 @@
                             <th> Status</th>
                             <th> Date Opened</th>
                             <th>Ticket Duration</th>
-                            <th> Action</th>
                             <th style="text-align:center" colspan="2">Actions</th>
                         </tr>
                     </thead>
@@ -49,7 +48,7 @@
                             <td>
                                 <form action="{{ url('admin/close_ticket/' . $ticket->ticket_id) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Close</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" style="font-weight:bold">Close</button>
                                 </form>
                             </td>
                         </tr>

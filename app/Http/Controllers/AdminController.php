@@ -5,11 +5,9 @@ namespace ComplainDesk\Http\Controllers;
 use Illuminate\Http\Request;
 use ComplainDesk\User;
 
-
-
 class AdminController extends Controller
 {
-    //    
+    //
     public function create()
     {
         $categories = Category::all();
@@ -17,7 +15,7 @@ class AdminController extends Controller
         return view('category', compact('categories'));
     }
     public function adminUserStore(Request $request)
-    {   
+    {
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'telephone' => 'required|max:10',
@@ -25,7 +23,7 @@ class AdminController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
         
-        if($request->input('password') == $request->input('password_confirmation')){
+        if ($request->input('password') == $request->input('password_confirmation')) {
             $admin = User::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
@@ -39,7 +37,6 @@ class AdminController extends Controller
         $admin->save();
 
         return redirect()->back()->with("status", "$admin->name has been created as an Admin.");
-
     }
 
     public function adminUserCreate()

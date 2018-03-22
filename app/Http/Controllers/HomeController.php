@@ -28,8 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        if(Auth::user()->is_admin) {
+        if (Auth::user()->is_admin) {
             $tickets = Ticket::orderBy('id', 'desc')->paginate(10);
             $categories = Category::all();
 
@@ -46,8 +45,7 @@ class HomeController extends Controller
             $totalTickets = count($totalTickets);
 
             $totalComments = null;
-
-        }else{
+        } else {
             $tickets = Ticket::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(10);
             $categories = Category::all();
 
@@ -66,7 +64,6 @@ class HomeController extends Controller
             $totalAdmins = null;
         }
 
-        return view('home', compact('tickets', 'categories', 'totalTicketsClosed' , 'totalTicketsOpen', 'totalTickets', 'totalAdmins', 'totalComments'));
-
+        return view('home', compact('tickets', 'categories', 'totalTicketsClosed', 'totalTicketsOpen', 'totalTickets', 'totalAdmins', 'totalComments'));
     }
 }

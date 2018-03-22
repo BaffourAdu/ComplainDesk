@@ -80,7 +80,7 @@
 
         <div class="form-group">
             <div class="col-md-12 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" style="font-weight:bold;background:#2737A6;color:white">
                     <i class="fa fa-btn fa-ticket"></i> Open Ticket
                 </button>
             </div>

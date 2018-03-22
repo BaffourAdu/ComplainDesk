@@ -210,9 +210,9 @@
                                         <td bgcolor="#ffffff" width="400" align="right" class="mobile-hide">
                                             <table border="0" cellpadding="0" cellspacing="0">
                                                 <tr>
-                                                    <td align="right" alt="Quick Support" style="padding: 0 0 5px 0; font-size: 14px; font-family: Arial, sans-serif; color: #666666; text-decoration: none;">
+                                                    <td align="right" style="padding: 0 0 5px 0; font-size: 14px; font-family: Arial, sans-serif; color: #666666; text-decoration: none;">
                                                         <span style="color: #666666; text-decoration: none;">Complain Desk - Your No.1 Customer Support Portal
-                                                            <br>Recieve, Track and Manage Complains with Ease
+                                                            <br>Recieve, Track and Manage Complains with ease
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -228,7 +228,7 @@
         </tr>
     </table>
 
-    <!-- MAIL SECTION -->
+    <!-- ONE COLUMN SECTION -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td bgcolor="#ffffff" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
@@ -264,7 +264,7 @@
                                             <tr>
                                                 <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;"
                                                     class="padding-copy">Thank you
-                                                    <b> {{ ucfirst($user->name) }} </b>for contacting our support team.</td>
+                                                    <b> Baffour Adu Boampong </b>for contacting our support team.</td>
                                             </tr>
                                             <tr>
                                                 <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
@@ -273,11 +273,11 @@
                                                     <br>
                                                     <br> The details of your ticket are as shown below:
                                                     <br>
-                                                    <b>Title: </b> {{ $ticket->title }}
+                                                    <b>Title:</b>
                                                     <br>
-                                                    <b>Priority: </b> {{ $ticket->priority }}
+                                                    <b>Priority:</b>
                                                     <br>
-                                                    <b>Status: </b> {{ $ticket->status }}
+                                                    <b>Status:</b>
                                                     <br>
                                                 </td>
                                             </tr>
@@ -293,7 +293,7 @@
                                                     <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
                                                         <tr>
                                                             <td align="center">
-                                                                <a href="{{ url('tickets/'. $ticket->ticket_id) }}" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #5D9CEC; border-top: 15px solid #5D9CEC; border-bottom: 15px solid #5D9CEC; border-left: 25px solid #5D9CEC; border-right: 25px solid #5D9CEC; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;"
+                                                                <a href="http://alistapart.com/article/can-email-be-responsive/" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #5D9CEC; border-top: 15px solid #5D9CEC; border-bottom: 15px solid #5D9CEC; border-left: 25px solid #5D9CEC; border-right: 25px solid #5D9CEC; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;"
                                                                     class="mobile-button">View Ticket &rarr;</a>
                                                             </td>
                                                         </tr>
@@ -310,6 +310,7 @@
             </td>
         </tr>
     </table>
+
     <!-- FOOTER -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
@@ -321,7 +322,7 @@
                             <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                                 <tr>
                                     <td align="center" valign="middle" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
-                                        <span class="appleFooter" style="color:#666666;">All rights reserved © Made with &hearts; in Ghana by AppGharage</span>
+                                        <span class="appleFooter" style="color:#666666;">All rights reserved © Made with &hearts; by AppGharage</span>
                                         <br>
                                         <a class="original-only" style="color: #666666; text-decoration: none;">Sign Up Your Business</a>
                                         <span class="original-only" style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>

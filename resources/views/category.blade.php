@@ -6,7 +6,7 @@
     <main role="main" class="container">
         <div class="col-md-10" style="margin:auto">
             <div class="card">
-                <div class="card-header" style="background:#2737A6;color:white">Add New Category</div>
+                <div class="card-header" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Add New Category</div>
                 <div class="container">
                     <div class="card-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/category') }}">
@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn" style="background:#2737A6;color:white">
+                                    <button type="submit" class="btn" style="background:#2737A6;color:white; font-weight:bold">
                                         <i class="fa fa-btn fa-ticket"></i> Add Category
                                     </button>
                                 </div>
@@ -46,8 +46,8 @@
                         <p>You have not created any tickets.</p>
                         @else
                         <div class="table-responsive-md">
-                            <table class="table table-inverse table-hover table table-sm">
-                                <thead style="background:#2737A6;color:white">
+                            <table class="table table-inverse table-hover">
+                                <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                                     <tr>
                                         <th>Name</th>
                                         <th>Created on</th>
@@ -62,7 +62,7 @@
                                         <td>
                                             <form action="{{ url('admin/category/delete/' . $category->id) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger" style="font-weight:bold">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

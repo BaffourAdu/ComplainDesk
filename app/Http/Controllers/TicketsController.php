@@ -32,7 +32,7 @@ class TicketsController extends Controller
         return view('tickets.create', compact('categories'));
     }
 
-    public function store(Request $request, AppMailer $mailer,SMSController $sms)
+    public function store(Request $request, AppMailer $mailer, SMSController $sms)
     {
         $this->validate($request, [
             'title'     => 'required|max:30',
@@ -62,19 +62,23 @@ class TicketsController extends Controller
             $telephone = '+233' . $userTelephone;
         }
         
+
+
+        $mailer->sendTicketInformation(Auth::user(), $ticket);
+            
+        return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
+        /*
         $smsResponse = $sms->sendSMS($smsMessage, $telephone);
 
-
-        if($smsResponse == "200"){
+        if ($smsResponse == "200") {
             $mailer->sendTicketInformation(Auth::user(), $ticket);
-            
+
             return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
-        }else{
+        } else {
             $mailer->sendTicketInformation(Auth::user(), $ticket);
 
             return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened. SMS Not Sent!");
-        }
-
+        }*/
     }
 
 

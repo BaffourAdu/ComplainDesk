@@ -21,17 +21,17 @@ class CategoriesController extends Controller
     //Method to Store the Category Created
     public function store(Request $request)
     {
-            $this->validate($request, [
+        $this->validate($request, [
                 'name'   => 'required'
             ]);
 
-            $category = new Category([
+        $category = new Category([
                 'name'     => $request->input('name'),
             ]);
 
-            $category->save();
+        $category->save();
     
-            return redirect()->back()->with("status", "$category->name Category has been created.");
+        return redirect()->back()->with("status", "$category->name Category has been created.");
     }
 
     //Method to detele Category

@@ -5,8 +5,8 @@
     <br> @if ($tickets->isEmpty())
     <p>You have not created any tickets.</p>
     @else
-    <table class="table table-responsive-md">
-        <thead style="background:#2737A6;color:white">
+    <table class="table table-responsive-md table-hover">
+        <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
             <tr>
                 <th>Ticket ID</th>
                 <th> Title</th>
@@ -40,7 +40,7 @@
                 <td>{{ $ticket->updated_at }}</td>
                 <td>
                     <form action="{{ url('tickets/'. $ticket->ticket_id) }}" method="GET">
-                        <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+                        <button type="submit" class="btn btn-primary btn-sm" style="background:#2737A6;color:white;font-weight:bold">Comment</button>
                     </form>
                 </td>
             </tr>

@@ -2,7 +2,7 @@
 <link href="{{ asset('css/userdashboard.css') }}" rel="stylesheet"> @endsection @include('layouts.user-dashboard-nav') @section('content')
 <div class="col-md-8 col-lg-6" style="margin:auto">
     <div class="card">
-        <div class="card-header" style="background:#2737A6;color:white">Ticket ID : {{ $ticket->ticket_id }}</div>
+        <div class="card-header" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Ticket ID : {{ $ticket->ticket_id }}</div>
         <div class="container">
             <div class="card-body">
                 <div class="container">
@@ -72,7 +72,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" style="font-weight:bold">Submit</button>
             </div>
         </form>
     </div>
