@@ -66,11 +66,11 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+                        <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail or Telephone</label>
 
                         <div class="col-md-6">
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                                required autofocus> @if ($errors->has('email'))
+                            <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
+                                placeholder="kwasi@test.com or +233543896548" required autofocus> @if ($errors->has('email'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('email') }}</strong>
                             </span>

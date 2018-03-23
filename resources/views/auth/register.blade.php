@@ -69,7 +69,7 @@
                                 <label for="name">Full Name</label>
 
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"
-                                    required autofocus> @if ($errors->has('name'))
+                                    placeholder="Kwasi Addae" required autofocus> @if ($errors->has('name'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
@@ -82,7 +82,7 @@
                                 <label for="email">E-Mail Address</label>
 
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                                    required> @if ($errors->has('email'))
+                                    placeholder="kwasi@test.com" required> @if ($errors->has('email'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
@@ -93,7 +93,7 @@
                                 <label for="telephone">Telephone</label>
 
                                 <input id="telephone" type="number" class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone"
-                                    value="{{ old('telephone') }}" required> @if ($errors->has('telephone'))
+                                    value="{{ old('telephone') }}" placeholder="+233543896548" required> @if ($errors->has('telephone'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('telephone') }}</strong>
                                 </span>
@@ -107,7 +107,7 @@
                             <div class="col-md-6">
                                 <label for="password">Password</label>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                    placeholder="Must be 8-20 characters long" required> @if ($errors->has('password'))
+                                    placeholder="Must be more than 8 Characters" required minlength="8"> @if ($errors->has('password'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
@@ -116,7 +116,8 @@
 
                             <div class="col-md-6">
                                 <label for="password-confirm">Confirm Password</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Repeat Password"
+                                    required>
                             </div>
                         </div>
                         <br>
