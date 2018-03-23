@@ -15,8 +15,8 @@ before_script:
 - mysql -e 'create database complaindesk;'
 - composer self-update
 - composer install --no-interaction
-- php artisan key:generate
 - php artisan config:clear
+- php artisan key:generate
 - php artisan migrate
 
 script:
