@@ -48,7 +48,7 @@ Authors
 
 Complain Desk Development Contribution
 ----------------------------------------------
-Thank you for considering contribute. You may propose new features or improvements of existing ones by submiting Pull Requests or sending an email to baffouraduboampong@gmail.com. 
+Thank you for considering contribute. You may propose new features or improvements of existing ones by submiting Pull Requests or sending an email to baffouraduboampong@gmail.com. Issues can also be submitted to as via our platform => https://complaindesk.herokuapp.com 
 
 Pull Requests
 ----------------------------------------------
@@ -64,7 +64,7 @@ One pull request per feature - If you want to do more than one thing, send multi
 
 Send coherent history - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please squash them before submitting.
 
-Test
+Tests
 ---------------------------------------------
 Please type the following command to run the test.
 
