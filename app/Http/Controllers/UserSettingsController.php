@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use ComplainDesk\User;
 
-
 class UserSettingsController extends Controller
 {
     //
@@ -20,7 +19,7 @@ class UserSettingsController extends Controller
     }
 
     public function updateTelephone(Request $request)
-    {   
+    {
         $this->validate($request, [
             'telephone'     => 'required|max:10',
         ]);
@@ -33,5 +32,4 @@ class UserSettingsController extends Controller
 
         return redirect()->back()->with("status", "Your Telephone Number has been submitted.");
     }
-
 }
