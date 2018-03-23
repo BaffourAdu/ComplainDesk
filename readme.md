@@ -25,7 +25,11 @@ Features
 ---------------------------------------------
 * Simple UI
 * Bootstrap 4
-* Local Authentication using Email and Password
+* Local Authentication using Email/Telephone and Password
+* Open tickets
+* Admin can close a ticket
+* User and Admin can comment on a ticket
+* A list of User's Ticket's on Dashboard
 * Complain Status and Duration Tracking
 * Add multiple Admins to manage complains
 * Ability to Categorize Complains
@@ -33,9 +37,8 @@ Features
 * Forgot Password
 * Account Management
 * CSRF Protection
-* Easily Generate Report on Complains 
-* Login with either email or telephone (Comming Soon)
-* A Knowledge base for already resolved issues to prevent same issue from been reported multiplt times(Comming Soon)
+* Easily Generate Report on Complains (Coming Soon)
+* A Knowledge base for already resolved issues to prevent same issue from been reported multiple times(Coming Soon)
 
 
 Authors
