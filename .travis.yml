@@ -17,6 +17,7 @@ before_script:
 - composer install --no-interaction
 - php artisan key:generate
 - php artisan migrate
+- php artisan config:clear
 
 script:
     - vendor/bin/phpunit
