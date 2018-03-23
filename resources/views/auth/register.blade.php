@@ -93,7 +93,7 @@
                                 <label for="telephone">Telephone</label>
 
                                 <input id="telephone" type="number" class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone"
-                                    value="{{ old('telephone') }}" placeholder="+233543896548" required> @if ($errors->has('telephone'))
+                                    value="{{ old('telephone') }}" placeholder="0543896548" required> @if ($errors->has('telephone'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('telephone') }}</strong>
                                 </span>
@@ -116,7 +116,7 @@
 
                             <div class="col-md-6">
                                 <label for="password-confirm">Confirm Password</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Repeat Password"
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Repeat Password`"
                                     required>
                             </div>
                         </div>
