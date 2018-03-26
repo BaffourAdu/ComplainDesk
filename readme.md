@@ -53,6 +53,7 @@ Complain Desk Development Contribution
 ----------------------------------------------
 Thank you for considering contribute. You may propose new features or improvements of existing ones by submiting Pull Requests or sending an email to baffouraduboampong@gmail.com. Issues can also be submitted to as via our platform => https://complaindesk.herokuapp.com 
 
+
 Pull Requests
 ----------------------------------------------
 PSR-2 Coding Standard - The easiest way to apply the conventions is to install PHP Code Sniffer.

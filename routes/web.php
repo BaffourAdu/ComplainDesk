@@ -29,12 +29,14 @@ Auth::routes();
 //Route to User's Dashboard
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route to display Page to Create TIcket
+//Route to display Page to Create Ticket
 Route::get('/tickets', 'TicketsController@create');
 //Route to Handle ticket Storage
 Route::post('/tickets', 'TicketsController@store');
 //Route to display authenticated User's Tickets
 Route::get('/mytickets', 'TicketsController@userTickets');
+//Route to display Frequently asked Questions
+Route::get('/faq', 'TicketsController@faq');
 //Route to display more information on a single ticket
 Route::get('/tickets/{ticket_id}', 'TicketsController@show');
 //ROute to Handle new comments storage

@@ -33,6 +33,7 @@
         <a class="nav-link {{ Request::is('tickets*') ? 'active' : '' }}" href="{{ url( '/tickets') }} ">Open Ticket</a>
         <a class="nav-link {{ Request::is('mytickets*') ? 'active' : '' }}" href="{{ url( '/mytickets') }} ">My Tickets</a>
         @endif
+        <a class="nav-link {{ Request::is('faq*') ? 'active' : '' }}" href="{{ url( '/faq') }} ">FAQ</a>
         <a class="nav-link {{ Request::is('settings*') ? 'active' : '' }}" href="{{ url( '/settings') }} ">Settings</a>
 
     </nav>

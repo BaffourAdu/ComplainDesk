@@ -90,6 +90,14 @@ class TicketsController extends Controller
         return view('tickets.user_tickets', compact('tickets', 'categories'));
     }
 
+    public function faq()
+    {
+        $tickets = Ticket::where('is_public', 1)->paginate(10);
+        $categories = Category::all();
+
+        return view('tickets.faq', compact('tickets', 'categories'));
+    }
+
     public function show($ticket_id)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
