@@ -53,6 +53,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('tickets', 'TicketsController@index');
     //Routes to close a ticket
     Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
+    //Change Ticket Visibility to Public
+    Route::post('public_ticket/{ticket_id}', 'TicketsController@ticketVisibilityPublic');
+    //Change Ticket Visibility to Private
+    Route::post('private_ticket/{ticket_id}', 'TicketsController@ticketVisibilityPrivate');
     //Route to display Page to Create TIcket
     Route::get('/category', 'CategoriesController@create');
     //Route to Handle ticket Storage

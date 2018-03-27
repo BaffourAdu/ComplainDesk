@@ -1,9 +1,16 @@
 @extends('layouts.app') @section('title', $ticket->title) @section('external-css')
+
+
 <link href="{{ asset('css/userdashboard.css') }}" rel="stylesheet"> @endsection @include('layouts.user-dashboard-nav') @section('content')
+
 <div class="col-md-8 col-lg-6" style="margin:auto">
     <div class="card">
+
+        @include('includes.flash')
+
         <div class="card-header" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Ticket ID : {{ $ticket->ticket_id }}</div>
         <div class="container">
+
             <div class="card-body">
                 <div class="container">
                     <div class="form-group">
@@ -36,6 +43,27 @@
                             <input type="text" class="form-control" id="closed" value="{{ $ticket->created_at->diffInHours($ticket->updated_at) }} hour(s)"
                                 readonly>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="category">Ticket Visibility</label>
+                            <input type="text" class="form-control" id="closed" value="{{ ucfirst($ticket->visibility) }} " readonly>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div style="float:right">
+                        @if(Auth::user()->is_admin)
+                        <form action="{{ url('admin/public_ticket/' . $ticket->ticket_id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-md" style="font-weight:bold">Make Ticket Public</button>
+                        </form>
+                        <br>
+                        <form action="{{ url('admin/private_ticket/' . $ticket->ticket_id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary btn-md" style="background:#2737A6;color:white;font-weight:bold;">Make Ticket Private</button>
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

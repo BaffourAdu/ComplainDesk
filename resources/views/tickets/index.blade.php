@@ -13,11 +13,11 @@
                     <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                         <tr>
                             <th>Ticket ID</th>
-                            <th> Title</th>
-                            <th> Category</th>
-                            <th> Status</th>
-                            <th> Date Opened</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Date Opened</th>
                             <th>Ticket Duration</th>
+                            <th>Status</th>
                             <th style="text-align:center" colspan="2">Actions</th>
                         </tr>
                     </thead>

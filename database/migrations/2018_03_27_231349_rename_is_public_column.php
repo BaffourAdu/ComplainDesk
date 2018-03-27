@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsPublicColumnToTickets extends Migration
+class RenameIsPublicColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,12 @@ class AddIsPublicColumnToTickets extends Migration
     public function up()
     {
         Schema::table('tickets', function (Blueprint $table) {
-            //
-            $table->smallInteger('is_public')->unsigned()->default(0);
+            $table->string('visibility', 8)->default('private');
         });
     }
 
+
+    
     /**
      * Reverse the migrations.
      *
@@ -28,7 +29,7 @@ class AddIsPublicColumnToTickets extends Migration
     {
         Schema::table('tickets', function (Blueprint $table) {
             //
-            $table->dropColumn('is_public');
+            $table->dropColumn('visibility');
         });
     }
 }

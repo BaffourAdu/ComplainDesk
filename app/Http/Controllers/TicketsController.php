@@ -92,7 +92,7 @@ class TicketsController extends Controller
 
     public function faq()
     {
-        $tickets = Ticket::where('is_public', 1)->paginate(10);
+        $tickets = Ticket::where('visibility', 'public')->paginate(20);
         $categories = Category::all();
 
         return view('tickets.faq', compact('tickets', 'categories'));
@@ -120,5 +120,27 @@ class TicketsController extends Controller
         $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
 
         return redirect()->back()->with("status", "The ticket has been closed.");
+    }
+
+    public function ticketVisibilityPublic($ticket_id)
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $ticket->visibility = 'public';
+
+        $ticket->save();
+
+        return redirect()->back()->with("status", "The Ticket visibility has been updated to Public.");
+    }
+
+    public function ticketVisibilityPrivate($ticket_id)
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $ticket->visibility = 'private';
+
+        $ticket->save();
+
+        return redirect()->back()->with("status", "The Ticket visibility was changed back to Private.");
     }
 }
