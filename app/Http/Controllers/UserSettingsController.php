@@ -9,13 +9,16 @@ use ComplainDesk\User;
 class UserSettingsController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        //$tickets = Ticket::paginate(10);
-        //$categories = Category::all();
         $oldTelephone = Auth::user()->telephone;
 
-        return view('settings', compact('oldTelephone'));
+        return view('settings.index', compact('oldTelephone'));
     }
 
     public function updateTelephone(Request $request)

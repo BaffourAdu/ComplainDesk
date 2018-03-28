@@ -8,14 +8,17 @@ use ComplainDesk\Category;
 
 class CategoriesController extends Controller
 {
-    //use ComplainDesk\Comment;
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     //Method to Show the Create New Category Vew
     public function create()
     {
         $categories = Category::all();
 
-        return view('category', compact('categories'));
+        return view('category.index', compact('categories'));
     }
 
     //Method to Store the Category Created

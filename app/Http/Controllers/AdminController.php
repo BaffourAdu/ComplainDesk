@@ -2,19 +2,19 @@
 
 namespace ComplainDesk\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use ComplainDesk\User;
+use ComplainDesk\Http\Controllers\LogsController as Log;
 
 class AdminController extends Controller
 {
-    //
-    public function create()
+    public function __construct()
     {
-        $categories = Category::all();
-
-        return view('category', compact('categories'));
+        $this->middleware('auth');
     }
-    public function adminUserStore(Request $request)
+    
+    public function store(Log $log, Request $request)
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
@@ -32,26 +32,37 @@ class AdminController extends Controller
                 'is_admin' => 1
             ]);
         }
-
-
+        
+        $action = "Created New Admin User";
+        $description = "Admin User ". $admin->name . " has been Created";
+        $userId = Auth::user()->id;
+        
         $admin->save();
+
+        $log->store($action, $description, $userId);
 
         return redirect()->back()->with("status", "$admin->name has been created as an Admin.");
     }
 
-    public function adminUserCreate()
+    public function create()
     {
         $admins = User::all()->where('is_admin', 1);
 
-        return view('admin-users', compact('admins'));
+        return view('admin-users.index', compact('admins'));
     }
 
     //Method to detele Category
-    public function delete($id)
+    public function delete(Log $log, $id)
     {
         $admin = User::where('id', $id)->firstOrFail();
     
+        $action = "Deleted Admin User";
+        $description = "Admin User ". $admin->name . " has been deleted";
+        $userId = Auth::user()->id;
+        
         $admin->delete();
+
+        $log->store($action, $description, $userId);
 
         return redirect()->back()->with("status", "Admin Deleted.");
     }

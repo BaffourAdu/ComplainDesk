@@ -28,7 +28,6 @@ Auth::routes();
 
 //Route to User's Dashboard
 Route::get('/home', 'HomeController@index')->name('home');
-
 //Route to display Page to Create Ticket
 Route::get('/tickets', 'TicketsController@create');
 //Route to Handle ticket Storage
@@ -57,16 +56,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('public_ticket/{ticket_id}', 'TicketsController@ticketVisibilityPublic');
     //Change Ticket Visibility to Private
     Route::post('private_ticket/{ticket_id}', 'TicketsController@ticketVisibilityPrivate');
-    //Route to display Page to Create TIcket
+    //Route to display Page to Create Ticket
     Route::get('/category', 'CategoriesController@create');
     //Route to Handle ticket Storage
     Route::post('/category', 'CategoriesController@store');
     //Route to Delete Category
     Route::post('category/delete/{id}', 'CategoriesController@delete');
-    //
-    Route::get('/users', 'AdminController@adminUserCreate');
-    //
-    Route::post('/users', 'AdminController@adminUserStore');
-    //
+    //Route To Display New Admin Page
+    Route::get('/users', 'AdminController@create');
+    //Route to store New Admin User
+    Route::post('/users', 'AdminController@store');
+    //Rotue to delete new Admin User
     Route::post('/users/{id}', 'AdminController@delete');
+    //Route to view Audit Logs
+    Route::get('logs', 'LogsController@index');
 });

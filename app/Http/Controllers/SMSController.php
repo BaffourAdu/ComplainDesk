@@ -10,7 +10,7 @@ class SMSController extends Controller
     public function sendSMS($message, $to)
     {
         $body =[
-            'query' => 
+            'query' =>
             [
                 'username' => 'sandbox',
                 'to' => $to,
@@ -22,7 +22,7 @@ class SMSController extends Controller
         
         $client = new \GuzzleHttp\Client(['base_uri' => 'https://api.sandbox.africastalking.com/']);
 
-        $request = $client->request("GET", "restless/send", $body,[
+        $request = $client->request("GET", "restless/send", $body, [
             "headers" => [
             "Accept" => "application/json",
             "Content-type" => "application/json"
@@ -31,6 +31,5 @@ class SMSController extends Controller
         //$response = $request->getBody();
 
         return $request->getStatusCode();
-
     }
 }
