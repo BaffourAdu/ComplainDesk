@@ -14,7 +14,7 @@ class UserSettingsController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function create()
     {
         $oldTelephone = Auth::user()->telephone;
 

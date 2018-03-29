@@ -5,6 +5,8 @@ namespace ComplainDesk\Http\Controllers;
 use Illuminate\Http\Request;
 use ComplainDesk\Http\Controllers\Controller;
 use ComplainDesk\Category;
+use ComplainDesk\Http\Controllers\LogsController as Log;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriesController extends Controller
 {
@@ -22,7 +24,7 @@ class CategoriesController extends Controller
     }
 
     //Method to Store the Category Created
-    public function store(Request $request)
+    public function store(Log $log, Request $request)
     {
         $this->validate($request, [
                 'name'   => 'required'
@@ -32,17 +34,29 @@ class CategoriesController extends Controller
                 'name'     => $request->input('name'),
             ]);
 
+        $action = "Created New Category";
+        $description = "Category ". $category->name . " has been Created";
+        $userId = Auth::user()->id;
+            
         $category->save();
+
+        $log->store($action, $description, $userId);
     
         return redirect()->back()->with("status", "$category->name Category has been created.");
     }
 
     //Method to detele Category
-    public function delete($id)
+    public function delete(Log $log, $id)
     {
         $category = Category::where('id', $id)->firstOrFail();
+
+        $action = "Deleted Category";
+        $description = "Category ". $category->name . " has been Deleted";
+        $userId = Auth::user()->id;
     
         $category->delete();
+
+        $log->store($action, $description, $userId);
 
         return redirect()->back()->with("status", "Category Deleted.");
     }

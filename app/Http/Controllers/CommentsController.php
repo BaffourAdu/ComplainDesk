@@ -9,10 +9,11 @@ use ComplainDesk\Comment;
 use ComplainDesk\Mailers\AppMailer;
 use Illuminate\Support\Facades\Auth;
 use ComplainDesk\Http\Controllers\SMSController;
+use ComplainDesk\Http\Controllers\LogsController as Log;
 
 class CommentsController extends Controller
 {
-    public function postComment(Request $request, AppMailer $mailer, SMSController $sms)
+    public function store(Request $request, AppMailer $mailer, Log $log, SMSController $sms)
     {
         $this->validate($request, [
                 'comment'   => 'required'
@@ -25,6 +26,7 @@ class CommentsController extends Controller
             ]);
 
         $ticketId =  $request->input('ticket_id');
+
         // send mail if the user commenting is not the ticket owner
         if ($comment->ticket->user->id !== Auth::user()->id) {
             $smsMessage = "A comment was made on your ticket with ID:$ticketId click the link to view => ". url('/tickets/') ."/" .$ticketId ;
@@ -34,8 +36,13 @@ class CommentsController extends Controller
                 $userTelephone= substr($userTelephone, 1);
                 $telephone = '+233' . $userTelephone;
             }
-                
+            
+            $action = "Made a new Comment";
+            $description = "Made a comment '". $comment->comment . "' on ticket with ID: ". $comment->ticket->ticket_id ;
+            $userId = Auth::user()->id;
             //$smsResponse = $sms->sendSMS($smsMessage, $telephone);
+            $log->store($action, $description, $userId);
+
 
             $mailer->sendTicketComments($comment->ticket->user, Auth::user(), $comment->ticket, $comment);
         }

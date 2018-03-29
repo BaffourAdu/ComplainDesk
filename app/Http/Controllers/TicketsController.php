@@ -8,6 +8,7 @@ use ComplainDesk\Ticket;
 use ComplainDesk\Mailers\AppMailer;
 use ComplainDesk\Http\Controllers\SMSController;
 use Illuminate\Support\Facades\Auth;
+use ComplainDesk\Http\Controllers\LogsController as Log;
 
 class TicketsController extends Controller
 {
@@ -90,13 +91,7 @@ class TicketsController extends Controller
         return view('tickets.user_tickets', compact('tickets', 'categories'));
     }
 
-    public function faq()
-    {
-        $tickets = Ticket::where('visibility', 'public')->paginate(20);
-        $categories = Category::all();
 
-        return view('tickets.faq', compact('tickets', 'categories'));
-    }
 
     public function show($ticket_id)
     {
@@ -107,39 +102,39 @@ class TicketsController extends Controller
         return view('tickets.show', compact('ticket', 'category', 'comments'));
     }
 
-    public function close($ticket_id, AppMailer $mailer)
-    {
-        $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
-        $ticket->status = 'Closed';
 
-        $ticket->save();
-
-        $ticketOwner = $ticket->user;
-
-        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
-
-        return redirect()->back()->with("status", "The ticket has been closed.");
-    }
-
-    public function ticketVisibilityPublic($ticket_id)
+    public function ticketVisibilityPublic(Log $log, $ticket_id)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
         $ticket->visibility = 'public';
 
+
+        $action = "Changed Ticket Visibility";
+        $description = "Changed Ticket with ID: ". $ticket_id . " visibility to Public";
+        $userId = Auth::user()->id;
+
         $ticket->save();
+
+        $log->store($action, $description, $userId);
 
         return redirect()->back()->with("status", "The Ticket visibility has been updated to Public.");
     }
 
-    public function ticketVisibilityPrivate($ticket_id)
+    public function ticketVisibilityPrivate(Log $log, $ticket_id)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
+
+        $action = "Changed Ticket Visibility";
+        $description = "Changed Ticket with ID: ". $ticket_id . " visibility to Private";
+        $userId = Auth::user()->id;
 
         $ticket->visibility = 'private';
 
         $ticket->save();
+
+        $log->store($action, $description, $userId);
 
         return redirect()->back()->with("status", "The Ticket visibility was changed back to Private.");
     }

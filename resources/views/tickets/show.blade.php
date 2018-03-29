@@ -39,9 +39,17 @@
                     </div>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="category">TIcket Duration</label>
+                            <label for="category">Ticket Duration</label>
                             <input type="text" class="form-control" id="closed" value="{{ $ticket->created_at->diffInHours($ticket->updated_at) }} hour(s)"
                                 readonly>
+                        </div>
+                    </div>
+
+                    @if(Auth::user()->is_admin)
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="category">Ticket By</label>
+                            <input type="text" class="form-control" id="closed" value="{{ ucfirst($ticket->user->name) }} " readonly>
                         </div>
                     </div>
                     <div class="form-group">
@@ -51,20 +59,23 @@
                         </div>
                     </div>
                     <br>
-                    <br>
+                    <br> @if($ticket->visibility == "private")
                     <div style="float:right">
-                        @if(Auth::user()->is_admin)
                         <form action="{{ url('admin/public_ticket/' . $ticket->ticket_id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger btn-md" style="font-weight:bold">Make Ticket Public</button>
                         </form>
-                        <br>
+                    </div>
+                    @else
+                    <div style="float:right">
                         <form action="{{ url('admin/private_ticket/' . $ticket->ticket_id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary btn-md" style="background:#2737A6;color:white;font-weight:bold;">Make Ticket Private</button>
                         </form>
-                        @endif
                     </div>
+                    @endif
+                    <br>
+                    <br> @endif
                 </div>
             </div>
         </div>

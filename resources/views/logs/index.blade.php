@@ -8,7 +8,6 @@
     <table class="table table-responsive-md table-hover">
         <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
             <tr>
-                <th>Event ID</th>
                 <th>Event By</th>
                 <th>Event Action</th>
                 <th>Event Description</th>
@@ -19,9 +18,6 @@
             @foreach ($logs as $log)
             <tr>
                 <td>
-                    {{ $log->id }}
-                </td>
-                <td>
                     {{ $log->user->name }}
                 </td>
                 <td>
@@ -29,7 +25,7 @@
                 </td>
                 <td>{{ $log->description }}</td>
                 <td>
-                    {{ $log->created_at }}
+                    {{ $log->created_at->format('F d, Y H:i')}}
                 </td>
             </tr>
             @endforeach
