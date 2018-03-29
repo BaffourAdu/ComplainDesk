@@ -32,13 +32,14 @@ Features
 * A list of User's Ticket's on Dashboard
 * Complain Status and Duration Tracking
 * Add multiple Admins to manage complains
+* Audit Logs to track activities of Admins
 * Ability to Categorize Complains
 * Email and SMS Notification
 * Forgot Password
 * Account Management
 * CSRF Protection
 * Easily Generate Report on Complains (Coming Soon)
-* A Knowledge base for already resolved issues to prevent same issue from been reported multiple times(Coming Soon)
+* A Knowledge base for already resolved issues to prevent same issue from been reported multiple times
 
 
 Authors
